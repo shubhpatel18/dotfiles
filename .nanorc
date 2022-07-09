@@ -1,0 +1,8 @@
+# show linenumbers
+set linenumbers
+
+# set text width to 80 columns
+set fill 80
+
+# keep indents
+set autoindent
