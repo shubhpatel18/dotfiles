@@ -1,0 +1,12 @@
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    if [ -z "$(pgrep ssh-agent)" ] ; then
+        eval $(ssh-agent -s) > /dev/null 2>&1
+        echo "Starting new ssh-agent: $SSH_AGENT_PID"
+        ssh-add
+    else
+        export SSH_AGENT_PID="$(pgrep ssh-agent)"
+        export SSH_AUTH_SOCK="$(find /tmp/ssh-* -name "agent.$(expr $SSH_AGENT_PID - 1)")"
+        echo "Found existing ssh-agent: $SSH_AGENT_PID"
+        ssh-add
+    fi
+fi

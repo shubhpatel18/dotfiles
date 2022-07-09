@@ -1,0 +1,8 @@
+zstyle ':completion:*' menu select
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+setopt autocd extendedglob nomatch
+unsetopt beep notify
