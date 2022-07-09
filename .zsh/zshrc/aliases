@@ -1,5 +1,5 @@
 alias h='history'
-alias hg='history -100 | grep'
+alias hg='history 0 | grep'
 
 alias la='ls -a'
 alias ll='ls -al'

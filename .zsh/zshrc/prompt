@@ -1,6 +1,6 @@
 setopt PROMPT_SUBST
 autoload -U colors && colors
-PROMPT='%F{015}.-(%F{012}%~%F{015})${(r:$COLUMNS-7-$(expr length $(dirs))-$(expr length ${$(hostname)%%.*})::-:)}%F{015}(%F{010}%m%F{015})-
+PROMPT='%f.-(%F{012}%~%f)${(r:$COLUMNS-7-$(expr length $(dirs))-$(expr length ${$(hostname)%%.*})::-:)}%f(%F{010}%m%f)-
 \`-> %# '
 
 # %n is the username of your account.
