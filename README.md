@@ -23,7 +23,7 @@ These dotfiles help me quickly configure a Linux machine to the way I like
 
 Add the following lines to .ssh/config to use the ssh-agent
 
-Note that keys currently expire after 12 hours (see Line 5 in .zsh/zprofile/ssh_agent)
+Note that keys currently expire after 12 hours (see Line 12 in .zsh/zprofile/ssh_agent)
 
 ```
 Host *
