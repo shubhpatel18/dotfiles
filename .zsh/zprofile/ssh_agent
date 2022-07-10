@@ -1,7 +1,8 @@
 keychain() {
 	if [ -z "$SSH_AUTH_SOCK" ] ; then
     		if [ -z "$(pgrep -u $USER ssh-agent)" ] ; then
-        		eval $(ssh-agent -s) > /dev/null 2>&1
+        		# start ssh agent + keep keys in memory for 12 hours
+			eval $(ssh-agent -t 43200) > /dev/null 2>&1
         		echo "Starting new ssh-agent: $SSH_AGENT_PID"
     		else
         		export SSH_AGENT_PID="$(pgrep -u $USER ssh-agent)"
@@ -11,8 +12,6 @@ keychain() {
 	else
 		echo "SSH_AUTH_SOCK already set: $SSH_AUTH_SOCK"
 	fi
-
-	ssh-add
 }
 
 keychain
