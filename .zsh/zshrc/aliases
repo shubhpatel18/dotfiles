@@ -1,8 +1,10 @@
 alias h='history'
 alias hg='history 0 | grep'
 
-alias la='ls -a'
-alias ll='ls -al'
+alias la='ls -AF'
+alias ll='ls -AlF'
+alias lh='ls -d .*'
+alias llh='ls -dl .*'
 
 alias ..='cd ..'
 alias ...='cd ../..'
