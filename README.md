@@ -8,7 +8,7 @@ These dotfiles help me quickly configure a Linux machine to the way I like
 
 ```
 % git clone https://github.com/shubhpatel18/dotfiles.git
-% rsync dotfiles/ ~/
+% rsync -a dotfiles/ ~/
 % rm -rf dotfiles
 ```
 
@@ -21,7 +21,7 @@ These dotfiles help me quickly configure a Linux machine to the way I like
 
 ## SSH AUTHENTICATION
 
-Add the following lines to .ssh/config to use the ssh-agent
+Append the following lines to .ssh/config to use the ssh-agent
 
 Note that keys currently expire after 12 hours (see Line 12 in .zsh/zprofile/ssh_agent)
 
