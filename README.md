@@ -46,3 +46,9 @@ Ensure its installation location is on $PATH then call it as:
 ```
 
 Additional setup may be required to interactively show images/plots on a headless system. I prefer to access images on Windows for this reason.
+
+## FURTHER CONFIGURATION
+
+All files in `~/.zsh/zshrc` are sourced for interactive shells and all files in `~/.zsh/zprofile` are sourced for login shells.
+
+Create system specific files in those directories to source on shell startup.
