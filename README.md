@@ -26,8 +26,10 @@ Append the following lines to `~/.ssh/config` to use `ssh-agent` as I do.
 ```
 Host *
 	AddKeysToAgent yes
-	ForwardAgent yes
 ```
+
+Also append the option `ForwardAgent yes` to any Host which the ssh-agent 
+should be forwarded to.
 
 NOTE: keys currently expire after 12 hours (see Line 12 in `~/.zsh/zprofile/ssh_agent`).
 
