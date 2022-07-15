@@ -1,6 +1,8 @@
 # ABOUT
 
 These dotfiles help me quickly configure a Linux machine to the way I like.
+These dotfiles are meant to be used with a terminal view using a Powerline
+patched font. Such a font can be found in .fonts.
 
 # USAGE
 
@@ -28,7 +30,7 @@ Host *
 	AddKeysToAgent yes
 ```
 
-Also append the option `ForwardAgent yes` to any Host which the ssh-agent 
+Also append the option `ForwardAgent yes` to any Host which the ssh-agent
 should be forwarded to.
 
 NOTE: keys currently expire after 12 hours (see Line 12 in `~/.zsh/zprofile/ssh_agent`).
