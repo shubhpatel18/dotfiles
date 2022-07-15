@@ -17,3 +17,9 @@ keychain() {
 
 keychain
 
+keychain-reset() {
+	kill "$(pgrep -u $USER ssh-agent)"
+	unset SSH_AUTH_SOCK
+	unset SSH_AGENT_PID
+	keychain
+}
