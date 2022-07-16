@@ -1,7 +1,7 @@
-zshrc_dir=(${HOME}/.zsh/zshrc)
+zshrc_dir=(${HOME}/.zsh)
 foreach cfg_file in ${zshrc_dir}/* ; do
 	if [ -f "${cfg_file}" ] ; then
 		source "${cfg_file}"
-  	fi
+	fi
 done
 unset zshrc_dir
