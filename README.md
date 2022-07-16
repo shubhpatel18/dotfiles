@@ -9,17 +9,19 @@ patched font. Such a font can be found in .fonts.
 1. Clone this repository and move the contents to the home directory.
 
 ```
-% git clone https://github.com/shubhpatel18/dotfiles.git
-% rsync -a dotfiles/ ~/
-% rm -rf dotfiles
+git clone https://github.com/shubhpatel18/dotfiles.git
+rsync -a dotfiles/ ~/
+rm -rf dotfiles
 ```
 
 2. Install and switch to zsh.
 
 ```
-% sudo apt install zsh
-% chsh -s $(which zsh)
+sudo apt install zsh
+chsh -s $(which zsh)
 ```
+
+3. Ensure terminal uses a Powerline patched font.
 
 ## SSH AUTHENTICATION
 
@@ -33,7 +35,12 @@ Host *
 Also append the option `ForwardAgent yes` to any Host which the ssh-agent
 should be forwarded to.
 
-NOTE: keys currently expire after 12 hours (see Line 12 in `~/.zsh/zprofile/ssh_agent`).
+NOTE: Keys currently expire after 12 hours (see Line 12 in `~/.zsh/ssh_agent`).
+
+WARNING: Sometimes multiple ssh sockets (`/tmp/ssh-...`) can exist for a single
+ssh_agent. I'm not sure why this occurs. This can cause `$SSH_AUTH_SOCK` to be 
+bound improperly. If this happens use `keychain-reset` to restart `ssh-agent` 
+and rebind `$SSH_AUTH_SOCK`.
 
 ## IPYTHON
 
