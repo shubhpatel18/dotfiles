@@ -10,8 +10,8 @@ git_info() {
 	# Git branch/tag, or name-rev if on detached head
 	local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
 
-	local AHEAD="%F{001}↑NUM"
-	local BEHIND="%F{010}↓NUM"
+	local AHEAD="%{$fg[red]%}↑NUM"
+	local BEHIND="%{$fg[green]%}↓NUM"
 	local MERGING="%{$fg[magenta]%}⚡︎"
 	local UNTRACKED="%{$fg[red]%}●"
 	local MODIFIED="%{$fg[yellow]%}●"
@@ -35,16 +35,20 @@ git_info() {
 		FLAGS+=( "$MERGING" )
 	fi
 
-	if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-		FLAGS+=( "$UNTRACKED" )
-	fi
+	# check git diff's return code to see if it makes sense to determine flags
+	# false outside of Git repo or inside .git, true otherwise
+	if git diff > /dev/null 2>&1; then
+		if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+			FLAGS+=( "$UNTRACKED" )
+		fi
 
-	if ! git diff --quiet 2> /dev/null; then
-		FLAGS+=( "$MODIFIED" )
-	fi
+		if ! git diff --quiet 2> /dev/null; then
+			FLAGS+=( "$MODIFIED" )
+		fi
 
-	if ! git diff --cached --quiet 2> /dev/null; then
-		FLAGS+=( "$STAGED" )
+		if ! git diff --cached --quiet 2> /dev/null; then
+			FLAGS+=( "$STAGED" )
+		fi
 	fi
 
 	local -a GIT_INFO
@@ -57,18 +61,30 @@ git_info() {
 
 prompt() {
 
+	# colors
+	local wdfg="015"
+	local wdbg="012"
+	local gitfg="015"
+	local gitbg="238"
+	local padbg="234"
+	local usrfg="015"
+	local usrbg="238"
+	local hstfg="016"
+	local hstbg="010"
+	local prmfg="015"
+
 	# Non adaptive prompt elements
-	local GIT="%F{015}$(git_info)%F{236}%K{234}"
-	local USR="%F{236}%F{015}%K{236} %n "
-	local HST="%K{236}%F{010}%F{016}%K{010} %m "
-	local PRMPT="\n%b%f%k» "
+	local GIT="%F{$gitfg}%K{$gitbg}$(git_info)%F{$gitbg}%K{$padbg}"
+	local USR="%F{$usrbg}%K{$padbg}%F{$usrfg}%K{$usrbg} %n "
+	local HST="%F{$hstbg}%K{$usrbg}%F{$hstfg}%K{$hstbg} %m "
+	local PRMPT="\n%F{$prmfg}%k» %f%k"
+
+	# Adaptive prompt elements
+	local WD_TEMPLATE="%F{$wdfg}%K{$wdbg} %COLS<...<%~ %<<%F{$wdbg}%K{$gitbg}"
+	local PADDING_TEMPLATE="%K{$padbg}SPACES"
 
 	# Magic necessary for calculating length of prompt sections
 	local ZERO="%([BSUbfksu]|([FK]|){*})"
-
-	# Templates
-	local WD_TEMPLATE="%B%F{015}%K{012} %COLS<...<%~ %<<%F{012}%K{236}"
-	local PADDING_TEMPLATE="SPACES"
 
 	# working directory
 	local NON_WD="$GIT$USR$HST"

@@ -47,13 +47,13 @@ and rebind `$SSH_AUTH_SOCK`.
 I like to use `ipython` on the command line. It can be installed via `pip`:
 
 ```
-% pip install ipython
+pip install ipython
 ```
 
 Ensure its installation location is on `$PATH` then call it as:
 
 ```
-% ipython
+ipython
 ```
 
 Additional setup may be required to interactively show images/plots on a headless system. I prefer to access images on Windows for this reason.
