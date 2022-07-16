@@ -30,9 +30,11 @@ set listchars=tab:•\ ,trail:•,extends:»,precedes:«
 " Requires terminal to be viewed with Powerline font. Can be found in ~/.fonts
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
 
 " Configuration for vim-gitgutter
 set updatetime=100
+set signcolumn=yes
 highlight SignColumn ctermbg=none
 
 hi DiffAdd      ctermfg=green

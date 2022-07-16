@@ -38,8 +38,8 @@ should be forwarded to.
 NOTE: Keys currently expire after 12 hours (see Line 12 in `~/.zsh/ssh_agent`).
 
 WARNING: Sometimes multiple ssh sockets (`/tmp/ssh-...`) can exist for a single
-ssh_agent. I'm not sure why this occurs. This can cause `$SSH_AUTH_SOCK` to be 
-bound improperly. If this happens use `keychain-reset` to restart `ssh-agent` 
+ssh_agent. I'm not sure why this occurs. This can cause `$SSH_AUTH_SOCK` to be
+bound improperly. If this happens use `keychain-reset` to restart `ssh-agent`
 and rebind `$SSH_AUTH_SOCK`.
 
 ## IPYTHON
