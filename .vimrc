@@ -23,10 +23,18 @@ syntax on
 " Set minimal custom colorscheme
 colorscheme shubh
 
+" Display unprintable characters
+set list
+set listchars=tab:•\ ,trail:•,extends:»,precedes:«
+
 " Requires terminal to be viewed with Powerline font. Can be found in ~/.fonts
 let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled = 1
 
-" Display unprintable characters
-set list
-set listchars=tab:•\ ,trail:•,extends:»,precedes:«
+" Configuration for vim-gitgutter
+set updatetime=100
+highlight SignColumn ctermbg=none
+
+hi DiffAdd      ctermfg=green
+hi DiffDelete   ctermfg=red
+hi DiffChange   ctermfg=blue
