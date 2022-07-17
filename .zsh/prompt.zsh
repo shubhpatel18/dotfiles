@@ -10,12 +10,12 @@ git_info() {
 	# Git branch/tag, or name-rev if on detached head
 	local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
 
-	local AHEAD="%{$fg[red]%}↑NUM"
-	local BEHIND="%{$fg[green]%}↓NUM"
-	local MERGING="%{$fg[magenta]%}⚡︎"
-	local UNTRACKED="%{$fg[red]%}●"
-	local MODIFIED="%{$fg[yellow]%}●"
-	local STAGED="%{$fg[green]%}●"
+	local AHEAD="%F{009}↑NUM"
+	local BEHIND="%F{010}↓NUM"
+	local MERGING="%F{012}⚡︎"
+	local UNTRACKED="%F{009}●"
+	local MODIFIED="%F{011}●"
+	local STAGED="%F{010}●"
 
 	local -a DIVERGENCES
 	local -a FLAGS
