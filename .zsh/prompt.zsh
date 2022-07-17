@@ -39,7 +39,7 @@ git_info() {
 	# false outside of Git repo or inside .git, true otherwise
 	if git diff > /dev/null 2>&1; then
 		if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-			FLAGS+=( "$UNTRACKED" )
+		FLAGS+=( "$UNTRACKED" )
 		fi
 
 		if ! git diff --quiet 2> /dev/null; then
@@ -67,16 +67,16 @@ prompt() {
 	local gitfg="015"
 	local gitbg="238"
 	local padbg="234"
-	local usrfg="015"
-	local usrbg="238"
+	local timefg="015"
+	local timebg="238"
 	local hstfg="016"
 	local hstbg="010"
 	local prmfg="015"
 
 	# Non adaptive prompt elements
 	local GIT="%F{$gitfg}%K{$gitbg}$(git_info)%F{$gitbg}%K{$padbg}"
-	local USR="%F{$usrbg}%K{$padbg}%F{$usrfg}%K{$usrbg} %n "
-	local HST="%F{$hstbg}%K{$usrbg}%F{$hstfg}%K{$hstbg} %m "
+	local TIME="%F{$timebg}%K{$padbg}%F{$timefg}%K{$timebg} %t "
+	local HST="%F{$hstbg}%K{$timebg}%F{$hstfg}%K{$hstbg} %m "
 	local PRMPT="\n%F{$prmfg}%k» %f%k"
 
 	# Adaptive prompt elements
@@ -87,13 +87,13 @@ prompt() {
 	local ZERO="%([BSUbfksu]|([FK]|){*})"
 
 	# working directory
-	local NON_WD="$GIT$USR$HST"
+	local NON_WD="$GIT$TIME$HST"
 	local NON_WD_LEN=${#${(S%%)NON_WD//$~ZERO/}}
 	local WD_LEN=$(( $COLUMNS - $NON_WD_LEN - 3 )) # 3 = 2 spaces + 1 > in WD
 	local WD=( "${WD_TEMPLATE//COLS/$WD_LEN}" )
 
 	# padding between left and right
-	local FULL="$WD$GIT$USR$HST"
+	local FULL="$WD$GIT$TIME$HST"
 	local FULL_LEN=${#${(S%%)FULL//$~ZERO/}}
 	local SPACES=${(r:$COLUMNS - $(eval echo $FULL_LEN):: :)}
 	local PADDING=( "${PADDING_TEMPLATE//SPACES/$SPACES}" )
@@ -102,7 +102,7 @@ prompt() {
 	PROMPT_BUILDER="$WD"
 	PROMPT_BUILDER+="$GIT"
 	PROMPT_BUILDER+="$PADDING"
-	PROMPT_BUILDER+="$USR"
+	PROMPT_BUILDER+="$TIME"
 	PROMPT_BUILDER+="$HST"
 	PROMPT_BUILDER+="$PRMPT"
 	echo $PROMPT_BUILDER
@@ -123,6 +123,8 @@ PROMPT='$(prompt)'
 
 # %n is the username of your account.
 # %m is the machine.
+# %t shows the time in 12 hour format.
+# %* shows the time in 24 hour format.
 # %d shows the full path to the working directory
 # %~ shows the path to the working directory relative to ~
 # %1~ means 1 directory deep

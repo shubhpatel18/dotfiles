@@ -30,3 +30,25 @@ cdll() { cd "$@"; ll; }
 cdlh() { cd "$@"; lh; }
 cdllh() { cd "$@"; llh; }
 
+# tmux shortcuts
+alias ttc='tmux choose-window'
+
+ttw() {
+	if [ $# -eq 0 ] ; then
+		tmux new-window
+	else
+		tmux select-window -t $1
+	fi
+}
+alias ttnw='tmux next-window'
+alias ttpw='tmux previous-window'
+
+ttp() {
+	if [ $# -eq 0 ] ; then
+		echo "current pane: $(tmux display-message -p '#P')"
+	else
+		tmux select-pane -t $1
+	fi
+}
+alias tth='tmux splitw -h'
+alias ttv='tmux splitw -v'

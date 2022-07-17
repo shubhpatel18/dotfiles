@@ -14,14 +14,14 @@ rsync -a dotfiles/ ~/
 rm -rf dotfiles
 ```
 
-2. Install and switch to zsh.
+2. Install zsh and tmux, and set the default shell to zsh.
 
 ```
-sudo apt install zsh
+sudo apt install zsh tmux
 chsh -s $(which zsh)
 ```
 
-3. Ensure terminal uses a Powerline patched font.
+3. Ensure terminal uses a Powerline patched font. This will be host specific.
 
 ## SSH AUTHENTICATION
 

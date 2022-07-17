@@ -14,7 +14,7 @@ set numberwidth=6
 " Hard wrap at 80 columns
 set textwidth=78
 
-" Enable line highlighting
+" Configure cursor
 set cursorline
 
 " Enable changing lines when moving beyond the beginning/end of the current line
@@ -32,9 +32,30 @@ set listchars=tab:\ \ ,trail:•,extends:»,precedes:«
 
 " Requires terminal to be viewed with Powerline font. Can be found in ~/.fonts
 let g:airline_powerline_fonts=1
-let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#tmuxline#enabled = 0
+" let g:tmuxline_preset = {
+" 	\	'win'  : '#I:#W',
+" 	\	'cwin' : '#I:#W',
+" 	\	'z'    : '#H',
+" 	\	'options' : {
+" 	\	'status-justify' : 'left',
+" 	\	'pane-border-style' : 'fg=colour234',
+" 	\	'pane-active-border-style' : 'fg=colour234 bg=colour238'
+" 	\	},
+" 	\ }
+" let g:tmuxline_theme = {
+" 	\   'a'    : [ 017, 234 ],
+" 	\   'b'    : [ 017, 234 ],
+" 	\   'c'    : [ 017, 234 ],
+" 	\   'win'  : [ 017, 236 ],
+" 	\   'cwin' : [ 017, 238 ],
+" 	\   'x'    : [ 017, 234 ],
+" 	\   'y'    : [ 017, 236 ],
+" 	\   'z'    : [ 017, 238 ],
+" 	\   'bg'   : [ 017, 234 ],
+" 	\ }
 
 " Configuration for vim-gitgutter
 set updatetime=100
