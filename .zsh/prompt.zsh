@@ -102,18 +102,10 @@ prompt() {
 	# padding between left and right
 	local FULL="$WD$GIT$VENV$TIME$HST"
 	local FULL_LEN=${#${(S%%)FULL//$~ZERO/}}
-	local SPACES=${(r:$COLUMNS - $(eval echo $FULL_LEN):: :)}
+	local SPACES=${(r:$COLUMNS - $FULL_LEN:: :)}
 	local PADDING=( "${PADDING_TEMPLATE//SPACES/$SPACES}" )
 
-	local -a PROMPT_BUILDER
-	PROMPT_BUILDER="$WD"
-	PROMPT_BUILDER+="$GIT"
-	PROMPT_BUILDER+="$VENV"
-	PROMPT_BUILDER+="$PADDING"
-	PROMPT_BUILDER+="$TIME"
-	PROMPT_BUILDER+="$HST"
-	PROMPT_BUILDER+="$PRMPT"
-	echo $PROMPT_BUILDER
+	echo "$WD$GIT$VENV$PADDING$TIME$HST$PRMPT"
 
 }
 

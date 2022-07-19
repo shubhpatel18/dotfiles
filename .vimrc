@@ -38,7 +38,7 @@ let g:airline#extensions#tmuxline#enabled = 0
 " let g:tmuxline_preset = {
 " 	\	'win'  : '#I:#W',
 " 	\	'cwin' : '#I:#W',
-" 	\	'z'    : '#H',
+" 	\	'z'    : '#h',
 " 	\	'options' : {
 " 	\	'status-justify' : 'left',
 " 	\	'pane-border-style' : 'fg=colour234',
