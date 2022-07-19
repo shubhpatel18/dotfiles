@@ -117,7 +117,7 @@ prompt() {
 
 }
 
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+VIRTUAL_ENV_DISABLE_PROMPT=1
 PROMPT='$(prompt)'
 
 ################################################################################
