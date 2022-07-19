@@ -59,6 +59,10 @@ git_info() {
 
 }
 
+venv_info() {
+	[ -n "$VIRTUAL_ENV" ] && echo " venv"
+}
+
 prompt() {
 
 	# colors
@@ -66,6 +70,8 @@ prompt() {
 	local wdbg="012"
 	local gitfg="015"
 	local gitbg="238"
+	local venvfg="015"
+	local venvbg="234"
 	local padbg="234"
 	local timefg="015"
 	local timebg="238"
@@ -74,7 +80,8 @@ prompt() {
 	local prmfg="015"
 
 	# Non adaptive prompt elements
-	local GIT="%F{$gitfg}%K{$gitbg}$(git_info)%F{$gitbg}%K{$padbg}"
+	local GIT="%F{$gitfg}%K{$gitbg}$(git_info)%F{$gitbg}%K{$venvbg}"
+	local VENV="%F{$venvfg}%K{$venvbg}$(venv_info)"
 	local TIME="%F{$timebg}%K{$padbg}%F{$timefg}%K{$timebg} %t "
 	local HST="%F{$hstbg}%K{$timebg}%F{$hstfg}%K{$hstbg} %m "
 	local PRMPT="\n%F{$prmfg}%k» %f%k"
@@ -87,13 +94,13 @@ prompt() {
 	local ZERO="%([BSUbfksu]|([FK]|){*})"
 
 	# working directory
-	local NON_WD="$GIT$TIME$HST"
+	local NON_WD="$GIT$VENV$TIME$HST"
 	local NON_WD_LEN=${#${(S%%)NON_WD//$~ZERO/}}
 	local WD_LEN=$(( $COLUMNS - $NON_WD_LEN - 3 )) # 3 = 2 spaces + 1 > in WD
 	local WD=( "${WD_TEMPLATE//COLS/$WD_LEN}" )
 
 	# padding between left and right
-	local FULL="$WD$GIT$TIME$HST"
+	local FULL="$WD$GIT$VENV$TIME$HST"
 	local FULL_LEN=${#${(S%%)FULL//$~ZERO/}}
 	local SPACES=${(r:$COLUMNS - $(eval echo $FULL_LEN):: :)}
 	local PADDING=( "${PADDING_TEMPLATE//SPACES/$SPACES}" )
@@ -101,6 +108,7 @@ prompt() {
 	local -a PROMPT_BUILDER
 	PROMPT_BUILDER="$WD"
 	PROMPT_BUILDER+="$GIT"
+	PROMPT_BUILDER+="$VENV"
 	PROMPT_BUILDER+="$PADDING"
 	PROMPT_BUILDER+="$TIME"
 	PROMPT_BUILDER+="$HST"
@@ -109,6 +117,7 @@ prompt() {
 
 }
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 PROMPT='$(prompt)'
 
 ################################################################################
