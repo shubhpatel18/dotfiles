@@ -1,0 +1,5 @@
+README.md
+.stowignore
+.gitignore
+\.git
+.*\.swp

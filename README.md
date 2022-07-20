@@ -6,22 +6,23 @@ patched font. Such a font can be found in .fonts.
 
 # USAGE
 
-1. Clone this repository and move the contents to the home directory.
+1. Install zsh, tmux, and stow. Set the default shell to zsh.
 
 ```
-git clone https://github.com/shubhpatel18/dotfiles.git
-rsync -a dotfiles/ ~/
-rm -rf dotfiles
-```
-
-2. Install zsh and tmux, and set the default shell to zsh.
-
-```
-sudo apt install zsh tmux
+sudo apt install zsh tmux stow
 chsh -s $(which zsh)
 ```
 
+2. Clone this repository to `~/.hstow/dotfiles`, and then stow it.
+
+```
+git clone git@github.com:shubhpatel18/dotfiles.git .hstow/dotfiles
+stow -t ~ -d .hstow dotfiles
+```
+
 3. Ensure terminal uses a Powerline patched font. This will be host specific.
+
+4. Restart terminal for changes to take effect.
 
 ## SSH AUTHENTICATION
 
