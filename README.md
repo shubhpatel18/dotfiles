@@ -61,6 +61,7 @@ Additional setup may be required to interactively show images/plots on a headles
 
 ## FURTHER CONFIGURATION
 
-All files in `~/.zsh/zshrc` are sourced for interactive shells and all files in `~/.zsh/zprofile` are sourced for login shells.
+All files in `~/.zsh` are sourced for interactive shells.
 
-Additional system specific files can be created in those directories to source on shell startup.
+Additional system specific files can be created in this directory to source on
+shell startup. Prefix with '-' to ignore from git.
