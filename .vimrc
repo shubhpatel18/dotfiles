@@ -1,3 +1,13 @@
+" Setup leader
+let mapleader = "\<Space>"
+map <leader>u :u<CR>
+map <leader>h :noh<CR>
+map <leader># 78<S-I>#<Esc>o<Esc>
+map <leader>o o<Esc>
+map <leader>O O<Esc>
+set showcmd
+set timeoutlen=500
+
 " Make switch to NORMAL mode more responsive
 set ttimeoutlen=5
 
@@ -22,6 +32,9 @@ set whichwrap+=<,>,h,l,[,]
 
 " Always use syntax highlighting
 syntax on
+
+" Enable highlight while searching
+set hlsearch
 
 " Set minimal custom colorscheme
 colorscheme shubh
@@ -60,7 +73,6 @@ let g:airline#extensions#tmuxline#enabled = 0
 " Configuration for vim-gitgutter
 set updatetime=100
 set signcolumn=yes
-highlight SignColumn ctermbg=none
 
 hi DiffAdd      ctermfg=green
 hi DiffDelete   ctermfg=red
