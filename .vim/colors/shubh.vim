@@ -1,11 +1,12 @@
-hi LineNr ctermfg=245
+hi LineNr ctermfg=030
 
 hi CursorLineNR cterm=none
-hi CursorLineNR cterm=bold ctermfg=245
+hi CursorLineNR ctermfg=030
 
 highlight SignColumn ctermbg=none
 
 hi CursorLine cterm=none
-hi CursorLine cterm=bold ctermbg=236
+hi CursorLine ctermbg=008
 
-hi SpecialKey ctermfg=245
+hi SpecialKey ctermfg=030
+
