@@ -114,14 +114,6 @@ PROMPT='$(prompt)'
 
 ################################################################################
 
-# Old prompt
-
-#PROMPT='%f.-(%K{012}%~%f)${(r:$COLUMNS-7-$(expr length "$(dirs)")-$(expr \
-#length ${"$(hostname)"%%.*})::-:)}%f(%F{010}%m%f)-
-#\`-> %# '
-
-################################################################################
-
 # %n is the username of your account.
 # %m is the machine.
 # %t shows the time in 12 hour format.

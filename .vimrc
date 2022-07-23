@@ -37,40 +37,19 @@ syntax on
 set hlsearch
 
 " Set minimal custom colorscheme
-colorscheme shubh
+colorscheme $VIM_COLOR_THEME
 
 " Display unprintable characters
 set list
 set listchars=tab::\ ,trail:•,extends:»,precedes:«
 
 " Requires terminal to be viewed with Powerline font. Can be found in ~/.fonts
+set noshowmode
 let g:airline_powerline_fonts=1
-let g:airline_theme='solarized_dark_custom'
+let g:airline_theme=$VIM_AIRLINE_THEME
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#tmuxline#enabled = 0
-
-let g:tmuxline_preset = {
-	\	'win'  : '#I:#W',
-	\	'cwin' : '#I:#W',
-	\	'z'    : '#h',
-	\	'options' : {
-	\	'status-justify' : 'left',
-	\	'pane-border-style' : 'fg=colour234',
-	\	'pane-active-border-style' : 'fg=colour234 bg=colour238'
-	\	},
-	\ }
-let g:tmuxline_theme = {
-	\   'a'    : [ 017, 008 ],
-	\   'b'    : [ 017, 008 ],
-	\   'c'    : [ 017, 008 ],
-	\   'win'  : [ 017, 027 ],
-	\   'cwin' : [ 017, 036 ],
-	\   'x'    : [ 017, 008 ],
-	\   'y'    : [ 017, 027 ],
-	\   'z'    : [ 017, 036 ],
-	\   'bg'   : [ 017, 008 ],
-	\ }
 
 " Configuration for vim-gitgutter
 set updatetime=100

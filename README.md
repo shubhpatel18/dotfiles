@@ -17,12 +17,35 @@ chsh -s $(which zsh)
 
 ```
 git clone git@github.com:shubhpatel18/dotfiles.git .hstow/dotfiles
-stow -t ~ -d .hstow dotfiles
+stow -t ~ -d ~/.hstow dotfiles
 ```
 
 3. Ensure terminal uses a Powerline patched font. This will be host specific.
 
 4. Restart terminal for changes to take effect.
+
+## UPDATES
+
+```
+cd ~/.hstow/dotfiles
+git pull
+hstow
+```
+
+## THEMES
+
+Supported themes: Campbell, Solarized Dark
+
+Coming Soon (Hopefully): Solarized Light, Ubuntu, Gruvbox Light, Gruvbox Dark
+
+1. Change themes in your terminal emulator. (Windows Terminal has Campbell and
+Solarized Dark builtin)
+
+2. Run the following command
+
+```
+set_theme <THEME_NAME>
+```
 
 ## SSH AUTHENTICATION
 
