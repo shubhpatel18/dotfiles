@@ -67,7 +67,7 @@ prompt() {
 
 	# colors
 	local wdfg="000"
-	local wdbg="004"
+	local wdbg="006"
 	local gitfg="000"
 	local gitbg="007"
 	local venvfg="000"
