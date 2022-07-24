@@ -23,10 +23,10 @@ let s:gui0F = '#d33682'
 
 " I have customized these
 " Terminal color definitions
-let s:ctermNB = "231" "NORMAL BG
-let s:ctermIB = "038" "INSERT BG
-let s:ctermVB = "208" "VISUAL BG
-let s:ctermCB = "035" "COMMAND BG
+let s:ctermNB = "015" "NORMAL BG
+let s:ctermIB = "004" "INSERT BG
+let s:ctermVB = "003" "VISUAL BG
+let s:ctermCB = "006" "COMMAND BG
 let s:ctermRB = "001" "REPLACE BG
 let s:ctermBG = "237" "PADDING BG
 let s:cterm2B = "007" "GIT BRANCH | ENCODING BG

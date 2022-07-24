@@ -10,12 +10,12 @@ git_info() {
 	# Git branch/tag, or name-rev if on detached head
 	local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
 
-	local AHEAD="%F{028}↑NUM"
+	local AHEAD="%F{029}↑NUM"
 	local BEHIND="%F{009}↓NUM"
 	local MERGING="%F{005}⚡︎"
 	local UNTRACKED="%F{009}●"
 	local MODIFIED="%F{011}●"
-	local STAGED="%F{028}●"
+	local STAGED="%F{029}●"
 
 	local -a DIVERGENCES
 	local -a FLAGS
@@ -67,7 +67,7 @@ prompt() {
 
 	# colors
 	local wdfg="000"
-	local wdbg="015"
+	local wdbg="004"
 	local gitfg="000"
 	local gitbg="007"
 	local venvfg="000"
@@ -76,7 +76,7 @@ prompt() {
 	local timefg="000"
 	local timebg="007"
 	local hstfg="000"
-	local hstbg="015"
+	local hstbg="006"
 	local prmfg="015"
 
 	# Non adaptive prompt elements
