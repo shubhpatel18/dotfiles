@@ -10,6 +10,13 @@ theme() {
 		tmux source-file ~/.tmux/campbell.tmux
 		source ~/.zsh/prompts/campbell.zsh
 
+	elif [ $theme = "GRUVBOX_DARK" ] ; then
+
+		export VIM_AIRLINE_THEME="gruv_dark"
+		export VIM_COLOR_THEME="shubh_gruv_dark"
+		tmux source-file ~/.tmux/gruv_dark.tmux
+		source ~/.zsh/prompts/gruv_dark.zsh
+
 	elif [ $theme = "SOLARIZED_DARK" ] ; then
 
 		export VIM_AIRLINE_THEME="solarized_dark"
@@ -28,8 +35,9 @@ theme() {
 theme
 
 set_theme() {
-	if [ $# != 1 ] || [ $1 != "CAMPBELL" ] && [ $1 != "SOLARIZED_DARK" ] ; then
-		echo "USAGE: $0 <CAMPBELL|SOLARIZED_DARK>"
+	if [ $# != 1 ] || [ $1 != "CAMPBELL" ] && [ $1 != "SOLARIZED_DARK" ] \
+		&& [ $1 != "GRUVBOX_DARK" ] ; then
+		echo "USAGE: $0 <CAMPBELL|SOLARIZED_DARK|GRUVBOX_DARK>"
 		return 1
 	else
 		echo "Run 'theme' in any other open windows to update the theme"

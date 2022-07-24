@@ -34,11 +34,10 @@ hstow
 
 ## THEMES
 
-Supported themes: Campbell, Solarized Dark
+Supported themes: Campbell, Solarized Dark, Gruvbox Dark
 
-Coming Soon (Hopefully): Solarized Light, Ubuntu, Gruvbox Light, Gruvbox Dark.
-
-Checkout THEMES.md for instructions on how to set up a new theme.
+Checkout THEMES.md for instructions on how to set up a new theme, or how to
+install Gruvbox Dark.
 
 1. Change themes in your terminal emulator. (Windows Terminal has Campbell and
 Solarized Dark builtin)

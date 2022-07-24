@@ -22,3 +22,38 @@ name of the airline theme and vim theme, and the paths to the tmuxline theme and
 prompt zsh script.
 
 	2. Update the `set_theme` function to accept the new theme name.
+
+# SUPPORTED THEMES
+
+Currently Campbell, Solarized Dark, and Gruvbox Dark are supported.
+
+Campbell and Solarized Dark are typically easily accessible though Gruvbox
+Dark may need to be installed.
+
+## Installing Gruvbox Dark on Windows Terminal
+
+Add the following to `settings.json`:
+
+```
+{
+  "background" : "#282828",
+  "black" : "#282828",
+  "blue" : "#458588",
+  "brightBlack" : "#928374",
+  "brightBlue" : "#83A598",
+  "brightCyan" : "#8EC07C",
+  "brightGreen" : "#B8BB26",
+  "brightPurple" : "#D3869B",
+  "brightRed" : "#FB4934",
+  "brightWhite" : "#EBDBB2",
+  "brightYellow" : "#FABD2F",
+  "cyan" : "#689D6A",
+  "foreground" : "#EBDBB2",
+  "green" : "#98971A",
+  "name" : "Gruvbox Dark",
+  "purple" : "#B16286",
+  "red" : "#CC241D",
+  "white" : "#A89984",
+  "yellow" : "#D79921"
+}
+```

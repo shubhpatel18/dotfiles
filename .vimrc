@@ -41,7 +41,7 @@ colorscheme $VIM_COLOR_THEME
 
 " Display unprintable characters
 set list
-set listchars=tab::\ ,trail:•,extends:»,precedes:«
+set listchars=tab:⋮\ ,trail:•,extends:»,precedes:«
 
 " Requires terminal to be viewed with Powerline font. Can be found in ~/.fonts
 set noshowmode
