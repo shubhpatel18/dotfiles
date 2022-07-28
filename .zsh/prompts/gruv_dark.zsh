@@ -70,7 +70,7 @@ prompt() {
 	local wdbg="006"
 	local gitfg="000"
 	local gitbg="007"
-	local venvfg="000"
+	local venvfg="015"
 	local venvbg="237"
 	local padbg="237"
 	local timefg="000"
