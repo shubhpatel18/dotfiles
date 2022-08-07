@@ -10,11 +10,14 @@ keychain() {
 		fi
 	fi
 
-	# keep tmux and screens happy
-	if [ ! -S ~/.ssh/ssh_auth_sock ] && [ -S "$SSH_AUTH_SOCK" ]; then
-		ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+	# keep tmux and screens happy by mainting SSH_AUTH_SOCK at
+	# .ssh/ssh_auth_sock
+	home_sock="$HOME/.ssh/ssh_auth_sock"
+	if [ $SSH_AUTH_SOCK != "$home_sock" ] && [ -S "$SSH_AUTH_SOCK" ] ; then
+		ln -sf "$SSH_AUTH_SOCK" "$home_sock"
 	fi
-	export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+	export SSH_AUTH_SOCK="$home_sock"
+	unset home_sock
 }
 
 keychain
