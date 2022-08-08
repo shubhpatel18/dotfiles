@@ -3,6 +3,19 @@
 alias h='history'
 alias hg='history 0 | grep'
 
+### SHOW FILES ###############################################################
+
+alias tree='tree -F --noreport'
+alias t='tree -L 1'
+alias tt='tree -a -L 1'
+alias th='tree -a -P ".*" --matchdirs --prune -L 1'
+
+alias ls='ls -F'
+alias la='ls -A'
+alias ll='ls -Al'
+alias lh='ls -d .*'
+alias llh='ls -dl .*'
+
 #### CHANGE DIRECTORY ########################################################
 
 alias ..='cd ..'
@@ -17,18 +30,6 @@ cdla() { cd "$@"; la; }
 cdll() { cd "$@"; ll; }
 cdlh() { cd "$@"; lh; }
 cdllh() { cd "$@"; llh; }
-
-### SHOW FILES ###############################################################
-
-alias tree='tree -F'
-alias t='tree -L 1'
-alias tt='tree -aL 1'
-
-alias ls='ls -F'
-alias la='ls -A'
-alias ll='ls -Al'
-alias lh='ls -d .*'
-alias llh='ls -dl .*'
 
 ### AUTOCOLOR ################################################################
 
