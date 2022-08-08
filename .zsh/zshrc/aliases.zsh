@@ -21,17 +21,8 @@ cdllh() { cd "$@"; llh; }
 ### SHOW FILES ###############################################################
 
 alias tree='tree -F'
-
-t() {
-	if [ $# = 0 ] ; then
-		tree -aL 1
-	elif [ $# = 1 ] ; then
-		tree -aL $1
-	else
-		echo "USAGE: t <depth, default=1>"
-		return 1
-	fi
-}
+alias t='tree -L 1'
+alias tt='tree -aL 1'
 
 alias ls='ls -F'
 alias la='ls -A'
