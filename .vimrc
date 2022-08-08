@@ -23,6 +23,7 @@ set numberwidth=6
 
 " Hard wrap at 80 columns
 set textwidth=78
+set colorcolumn=79
 
 " Configure cursor
 set cursorline

@@ -8,5 +8,7 @@ highlight SignColumn ctermbg=none
 hi CursorLine cterm=none
 hi CursorLine ctermbg=237
 
+hi ColorColumn ctermbg=237
+
 hi SpecialKey ctermfg=008
 
