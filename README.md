@@ -9,7 +9,7 @@ patched font. Such a font can be found in .fonts.
 1. Install zsh, tmux, and stow. Set the default shell to zsh.
 
 ```
-sudo apt install zsh tmux stow
+sudo apt install zsh tmux stow tree
 chsh -s $(which zsh)
 ```
 
