@@ -67,4 +67,16 @@ ttp() {
 alias tth='tmux splitw -h'
 alias ttv='tmux splitw -v'
 
+### GIT SHORTCUTS ############################################################
+
+hash="%C(yellow)%h"
+base="%x09%Cblue%<(14)%ad %Cgreen%<(15)%an %Cred%d %Creset%s"
+
+alias glg="git log --graph --date=relative"
+alias glog="glg --pretty=format:'$base'"
+alias glogh="glg --pretty=format:'$hash $base'"
+
+unset hash
+unset base
+
 ##############################################################################
