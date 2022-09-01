@@ -5,8 +5,8 @@ map <leader>h :noh<CR>
 map <leader># 78<S-I>#<Esc>o<Esc>
 map <leader>o o<Esc>
 map <leader>O O<Esc>
-map <leader>t :set expandtab
-map <leader>T :set noexpandtab
+map <leader>t :set expandtab<CR>
+map <leader>T :set noexpandtab<CR>
 set showcmd
 set timeoutlen=500
 
