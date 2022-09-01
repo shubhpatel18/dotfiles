@@ -1,3 +1,8 @@
+### COMMON REDIRECTS #########################################################
+
+alias home='cd ~'
+alias dotfiles='cd ~/.hstow/dotfiles'
+
 ### HISTORY ##################################################################
 
 alias h='history'
