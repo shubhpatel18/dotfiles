@@ -7,21 +7,21 @@ theme() {
 
 		export VIM_AIRLINE_THEME="dark"
 		export VIM_COLOR_THEME="shubh_dark"
-		tmux source-file ~/.tmux/campbell.tmux
+		[ -n "$TMUX" ] && tmux source-file ~/.tmux/campbell.tmux
 		source ~/.zsh/prompts/campbell.zsh
 
 	elif [ $theme = "GRUVBOX_DARK" ] ; then
 
 		export VIM_AIRLINE_THEME="gruv_dark"
 		export VIM_COLOR_THEME="shubh_gruv_dark"
-		tmux source-file ~/.tmux/gruv_dark.tmux
+		[ -n "$TMUX" ] && tmux source-file ~/.tmux/gruv_dark.tmux
 		source ~/.zsh/prompts/gruv_dark.zsh
 
 	elif [ $theme = "SOLARIZED_DARK" ] ; then
 
 		export VIM_AIRLINE_THEME="solarized_dark"
 		export VIM_COLOR_THEME="shubh_sol_dark"
-		tmux source-file ~/.tmux/sol_dark.tmux
+		[ -n "$TMUX" ] && tmux source-file ~/.tmux/sol_dark.tmux
 		source ~/.zsh/prompts/sol_dark.zsh
 
 	else

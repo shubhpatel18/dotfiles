@@ -1,5 +1,6 @@
-if [ -t 0 ] && [[ -z "$TMUX" ]] && [[ $- = *i* ]] ; then
-	exec tmux new -As "$USER";
+startup_file=".zsh/startup/startup.zsh"
+if [ -f $startup_file ] ; then
+	source $startup_file
 fi
 
 zshrc_dir=(${HOME}/.zsh/zshrc)
