@@ -20,6 +20,13 @@ git clone git@github.com:shubhpatel18/dotfiles.git .hstow/dotfiles
 stow -t ~ -d ~/.hstow dotfiles
 ```
 
+3. Create a softlink to a startup script if desired (for example, to start
+tmux automatically). Ensure the script prevents an infite loop from running.
+
+```
+ln -s <startup_script> .zsh/startup/startup.zsh
+```
+
 3. Ensure terminal uses a Powerline patched font. This will be host specific.
 
 4. Restart terminal for changes to take effect.
