@@ -2,3 +2,4 @@
 .ipython/profile_default/startup/README
 .zsh/-*
 .vim/.netrwhist
+.zsh/startup/startup.zsh
