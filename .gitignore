@@ -3,3 +3,4 @@
 .zsh/-*
 .vim/.netrwhist
 .zsh/startup/startup.zsh
+.fonts/**/.uuid
