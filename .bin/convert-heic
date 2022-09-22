@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ $# != 2 ] ; then
+	echo "USAGE: $0 <path> <file_type>"
+	exit 1
+fi
+
+path=$1
+file_type=$2
+
+if [ ! -d "$path" ] ; then
+	echo "Invalid path"
+	exit 1
+fi
+
+if [ "$file_type" != "png" ] && [ "$file_type" != "jpg" ] ; then
+	echo "Invalid file type"
+	exit 1
+fi
+
+for file in "$path"/*.HEIC;
+do
+	short_file=${file%.HEIC}
+	heif-convert -q 100 "$file" "$short_file.$file_type"
+done
