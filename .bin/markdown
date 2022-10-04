@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ $# != 2 ] ; then
+	echo "USAGE: $0 <file> <file_type>"
+	exit 1
+fi
+
+file=$1
+file_type=$2
+
+if [ ! -f "$file" ] ; then
+	echo "Invalid file"
+	exit 1
+fi
+
+if [ "$file_type" != "pdf" ] ; then
+	echo "Invalid file type"
+	exit 1
+fi
+
+short_file=${file%.md}
+output_file="$short_file.$file_type"
+pandoc -s -o $output_file $file
+
+$BROWSER $output_file

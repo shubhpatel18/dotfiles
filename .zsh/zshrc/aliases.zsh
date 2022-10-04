@@ -4,6 +4,8 @@ start() {
 	$@ 1>/dev/null 2>&1 & disown
 }
 
+alias browser=$BROWSER
+
 ### COMMON REDIRECTS #########################################################
 
 alias dotfiles='cd ~/.hstow/dotfiles'
