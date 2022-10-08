@@ -90,9 +90,63 @@ ipython
 
 Additional setup may be required to interactively show images/plots on a headless system. I prefer to access images on Windows for this reason.
 
+## MARKDOWN
+
+I like to use `pandoc` and `grip` for rendering markdown files. I use `grip`
+to preview markdown files as I am editing them, and `pandoc` for rendering
+finished PDFs.
+
+### Grip
+
+`grip` can be installed with the follwing command.
+
+```
+sudo apt install grip
+```
+
+To view a file preview with `grip`, execute `grip` as follows. `grip` will
+then provide the address (`localhost:<port>`) to view within browser.
+
+```
+grip file.md
+```
+
+### Pandoc
+
+Install `pandoc` (and required `LaTeX` dependecies) with the following
+command.
+
+```
+sudo apt install pandoc texlive texlive-fonts-recommend texlive-fonts-extra
+```
+
+Render markdown files with `pandoc` as follows.
+
+```
+pandoc -s -o file.pdf file1.md... (file2.md) (file3.md)
+```
+
+or use the script I wrote in `~/.bin`
+
+```
+markdown file.md pdf
+```
+
+I always use the following YAML header in my markdown files if I am planning
+to render with pandoc:
+
+```
+---
+title: TITLE
+author: Shubh Patel
+geometry: margin=1in
+---
+```
+
 ## FURTHER CONFIGURATION
 
-All files in `~/.zsh` are sourced for interactive shells.
+`zsh` startup files source modular scripts from the `.zsh` directory. Folders
+correspond to the script executing them.
 
-Additional system specific files can be created in this directory to source on
-shell startup. Prefix with '-' to ignore from git.
+Additional system specific files can be created in the appropriate directory
+to source on shell startup. Prefix with `-` to ignore from git.
