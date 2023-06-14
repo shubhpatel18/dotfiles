@@ -24,6 +24,13 @@ theme() {
 		[ -n "$TMUX" ] && tmux source-file ~/.tmux/sol_dark.tmux
 		source ~/.zsh/prompts/sol_dark.zsh
 
+	elif [ $theme = "SOLARIZED_LIGHT" ] ; then
+
+		export VIM_AIRLINE_THEME="solarized_light"
+		export VIM_COLOR_THEME="shubh_sol_light"
+		[ -n "$TMUX" ] && tmux source-file ~/.tmux/sol_light.tmux
+		source ~/.zsh/prompts/sol_light.zsh
+
 	else
 
 		echo "Invalid Theme"
@@ -36,8 +43,8 @@ theme
 
 set_theme() {
 	if [ $# != 1 ] || [ $1 != "CAMPBELL" ] && [ $1 != "SOLARIZED_DARK" ] \
-		&& [ $1 != "GRUVBOX_DARK" ] ; then
-		echo "USAGE: $0 <CAMPBELL|SOLARIZED_DARK|GRUVBOX_DARK>"
+		&& [ $1 != "GRUVBOX_DARK" ] && [ $1 != "SOLARIZED_LIGHT" ] ; then
+		echo "USAGE: $0 <CAMPBELL|SOLARIZED_DARK|SOLARIZED_LIGHT|GRUVBOX_DARK>"
 		return 1
 	else
 		echo "Run 'theme' in any other open windows to update the theme"
