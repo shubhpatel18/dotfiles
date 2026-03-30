@@ -1,6 +1,0 @@
-#!/bin/bash
-
-path="${1:-.}"
-winpath=$(wslpath -w "$(realpath "$path")")
-encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$winpath', safe=''))")
-cmd.exe /c start "obsidian://open?path=$encoded" 2>/dev/null
