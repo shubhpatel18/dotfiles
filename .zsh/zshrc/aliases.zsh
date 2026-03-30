@@ -86,9 +86,12 @@ base="%x09%Cblue%<(14)%ad %Cgreen%<(15)%an %Cred%d %Creset%s"
 
 alias glg="git log --graph --date=relative"
 alias glog="glg --pretty=format:'$base'"
+alias glogn="glg --pretty=format:'$base' -n "
 alias glogs="glg --pretty=format:'$base' -n 10"
 alias glogh="glg --pretty=format:'$hash $base'"
 alias gloghs="glg --pretty=format:'$hash $base' -n 10"
+
+alias copy-sha="git rev-parse --verify HEAD | clip.exe"
 
 unset hash
 unset base
