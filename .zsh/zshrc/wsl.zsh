@@ -1,6 +1,7 @@
 [[ -z "$WSL_DISTRO_NAME" ]] && return
 
 alias explorer='explorer.exe'
+alias wpath='wslpath -w'
 
 # Open a folder in Windsurf from WSL
 ws() {
